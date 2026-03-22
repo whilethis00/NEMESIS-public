@@ -40,8 +40,11 @@ cd NEMESIS
 conda env create -f environment.yml
 conda activate nemesis
 
-# or pip
-pip install -r requirements.txt
+# or pip (core model only)
+pip install -e .
+
+# with benchmark dependencies
+pip install -e ".[benchmark]"
 ```
 
 ---
