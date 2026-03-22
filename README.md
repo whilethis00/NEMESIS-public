@@ -52,7 +52,7 @@ Download from HuggingFace Hub:
 
 ```bash
 pip install huggingface_hub
-huggingface-cli download hsjung/NEMESIS MAE_768_0.5.pt --local-dir pretrained/
+huggingface-cli download whilethis/NEMESIS MAE_768_0.5.pt --local-dir pretrained/
 ```
 
 See [`pretrained/README.md`](pretrained/README.md) for details and alternative download methods.

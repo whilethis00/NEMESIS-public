@@ -17,7 +17,7 @@ from huggingface_hub import hf_hub_download
 
 # Download main checkpoint
 path = hf_hub_download(
-    repo_id="hsjung/NEMESIS",
+    repo_id="whilethis/NEMESIS",
     filename="MAE_768_0.5.pt",
     local_dir="pretrained/",
 )
@@ -28,12 +28,12 @@ print(f"Saved to {path}")
 
 ```bash
 pip install huggingface_hub
-huggingface-cli download hsjung/NEMESIS MAE_768_0.5.pt --local-dir pretrained/
+huggingface-cli download whilethis/NEMESIS MAE_768_0.5.pt --local-dir pretrained/
 ```
 
 ### Manual download
 
-Visit https://huggingface.co/hsjung/NEMESIS and download `MAE_768_0.5.pt` into this folder.
+Visit https://huggingface.co/whilethis/NEMESIS and download `MAE_768_0.5.pt` into this folder.
 
 ## Checkpoint format
 
