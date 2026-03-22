@@ -1,0 +1,34 @@
+experiment:
+  name: "btcv_cls_suprem"
+  seed: 42
+
+model:
+  name: "suprem"
+  num_classes: 8
+  img_size: [128, 128, 128]
+  feature_size: 48
+  pretrained_path: "pretrained/supervised_suprem_swinunetr_2100.pth"  # download separately
+
+data:
+  dataset: "btcv_cls"
+  data_root: "data/BTCV"
+  superpatch_size: [128, 128, 128]
+  num_classes: 8
+  label_fraction: 1.0
+  batch_size: 4
+  num_workers: 4
+  presence_threshold: 100
+
+training:
+  max_epochs: 100
+  val_every: 5
+  lr: 0.0001
+  weight_decay: 0.00001
+  warmup_epochs: 5
+  amp: false
+  grad_clip: 1.0
+  early_stop_patience: 20
+  cls_threshold: 0.5
+
+output:
+  dir: "results/btcv_cls_suprem"

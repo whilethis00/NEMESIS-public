@@ -1,0 +1,71 @@
+# NEMESIS Pretraining Configuration
+# Noise-Enhanced Dual-Masking MAE on 128^3 CT Superpatches
+#
+# Usage:
+#   python scripts/pretrain.py \
+#     --config configs/pretrain.yaml \
+#     --exp_name NEMESIS_pretrain \
+#     --data_json data/combined_dataset.json \
+#     --epochs 50 \
+#     --batch_size 4 \
+#     --mask_ratio 0.5 \
+#     --device_ids 0
+
+project_name: "NEMESIS"
+seed: 42
+device: "cuda"
+
+data:
+  volume_size: [512, 512, 512]
+  superpatch:
+    size: [128, 128, 128]
+    stride: [128, 128, 128]
+    overlap: true
+    min_foreground_ratio: 0.05
+  patch:
+    size: [8, 8, 8]
+    channels: 1
+  split_ratio:
+    train: 0.9
+    val: 0.1
+
+model:
+  encoder:
+    embed_dim: 768          # 384 / 576 / 768 (see ablation in paper)
+    depth: 6
+    num_heads: 8
+    mlp_ratio: 4.0
+    dropout: 0.1
+    drop_path_rate: 0.1
+    num_maegic_tokens: 8
+    pos_encoding_type: "sinusoidal"
+    use_maegic_tokens: true
+
+  decoder:
+    embed_dim: 128          # lightweight decoder
+    depth: 3
+    num_heads: 8
+
+  masking:
+    mask_ratio: 0.5         # plane_mask_ratio = axis_mask_ratio = mask_ratio
+                            # effective combined ratio ≈ 1 - (1 - r)^2
+
+training:
+  epochs: 50
+  batch_size: 4
+  optimizer:
+    type: "AdamW"
+    lr: 0.0001
+    weight_decay: 0.05
+    betas: [0.9, 0.95]
+  scheduler:
+    type: "cosine"
+    warmup_epochs: 5
+    min_lr: 0.000001
+
+noise:
+  levels: [0.0, 0.01, 0.03, 0.05]   # HU-normalised std; one level sampled per batch
+
+logging:
+  save_interval: 10
+  log_frequency: 20

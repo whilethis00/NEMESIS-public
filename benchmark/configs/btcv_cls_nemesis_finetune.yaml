@@ -1,0 +1,37 @@
+experiment:
+  name: "btcv_cls_nemesis_finetune"
+  seed: 42
+
+model:
+  name: "nemesis"
+  checkpoint_path: "pretrained/MAE_768_0.5.pt"
+  num_classes: 8
+  freeze_encoder: false         # fine-tune full encoder
+  embed_dim: 768
+  depth: 6
+  num_heads: 8
+  num_maegic_tokens: 8
+
+data:
+  dataset: "btcv_cls"
+  data_root: "data/BTCV"
+  superpatch_size: [128, 128, 128]
+  num_classes: 8
+  label_fraction: 1.0
+  batch_size: 4
+  num_workers: 4
+  presence_threshold: 100
+
+training:
+  max_epochs: 100
+  val_every: 5
+  lr: 0.0001                    # lower LR for fine-tuning
+  weight_decay: 0.00001
+  warmup_epochs: 5
+  amp: false
+  grad_clip: 1.0
+  early_stop_patience: 20
+  cls_threshold: 0.5
+
+output:
+  dir: "results/btcv_cls_nemesis_finetune"

@@ -1,0 +1,23 @@
+# Core deep learning
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Medical imaging
+monai>=1.3.0
+nibabel>=5.0.0
+SimpleITK>=2.2.0
+
+# Scientific computing
+numpy>=1.24.0
+scipy>=1.10.0
+
+# Utilities
+einops>=0.7.0
+pyyaml>=6.0
+tqdm>=4.65.0
+
+# HuggingFace (for checkpoint download)
+huggingface_hub>=0.20.0
+
+# Logging
+tensorboard>=2.13.0

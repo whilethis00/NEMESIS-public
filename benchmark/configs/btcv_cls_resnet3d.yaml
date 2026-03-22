@@ -1,0 +1,32 @@
+experiment:
+  name: "btcv_cls_resnet3d"
+  seed: 42
+
+model:
+  name: "resnet3d"
+  num_classes: 8
+  model_depth: 50
+
+data:
+  dataset: "btcv_cls"
+  data_root: "data/BTCV"
+  superpatch_size: [128, 128, 128]
+  num_classes: 8
+  label_fraction: 1.0
+  batch_size: 4     # ResNet50 3D uses more memory
+  num_workers: 4
+  presence_threshold: 100
+
+training:
+  max_epochs: 100
+  val_every: 5
+  lr: 0.001
+  weight_decay: 0.00001
+  warmup_epochs: 5
+  amp: false
+  grad_clip: 1.0
+  early_stop_patience: 20
+  cls_threshold: 0.5
+
+output:
+  dir: "results/btcv_cls_resnet3d"

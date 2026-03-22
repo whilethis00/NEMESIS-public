@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Data (large files — store separately)
+data/
+
+# Results
+results/
+
+# Pretrained weights (download separately via HuggingFace)
+pretrained/*.pt
+pretrained/*.pth
+pretrained/*.ckpt
+
+# Logs
+runs/
+logs/
+*.log
+*.tfevents.*
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+tmp/
+*.tmp
