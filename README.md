@@ -2,7 +2,7 @@
 
 **Superpatch-based 3D Medical Image Self-Supervised Pretraining via Noise-Enhanced Dual-Masking**
 
-> IEEE AICAS 2026
+> Submitted to IEEE AICAS 2026 · [arXiv:2604.01612](https://arxiv.org/abs/2604.01612)
 
 ---
 
@@ -191,12 +191,12 @@ NEMESIS/
 If you use NEMESIS in your research, please cite:
 
 ```bibtex
-@inproceedings{jung2026nemesis,
-  title     = {{NEMESIS}: Superpatch-based 3{D} Medical Image Self-Supervised Pretraining
-               via Noise-Enhanced Dual-Masking},
-  author    = {Jung, Hyeonseok and others},
-  booktitle = {IEEE International Conference on Artificial Intelligence Circuits and Systems (AICAS)},
-  year      = {2026},
+@article{jung2026nemesis,
+  title   = {{NEMESIS}: Superpatch-based 3{D} Medical Image Self-Supervised Pretraining
+             via Noise-Enhanced Dual-Masking},
+  author  = {Jung, Hyeonseok and others},
+  journal = {arXiv preprint arXiv:2604.01612},
+  year    = {2026},
 }
 ```
 
