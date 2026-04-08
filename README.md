@@ -4,6 +4,10 @@
 
 > Submitted to IEEE AICAS 2026 · [arXiv:2604.01612](https://arxiv.org/abs/2604.01612)
 
+[![arXiv](https://img.shields.io/badge/arXiv-2604.01612-b31b1b.svg)](https://arxiv.org/abs/2604.01612)
+
+**Keywords:** self-supervised learning, medical image analysis, 3D CT, Vision Transformer, masked autoencoders, pretraining, volumetric imaging, organ classification
+
 ---
 
 ## Overview
@@ -188,7 +192,7 @@ NEMESIS/
 
 ## Citation
 
-If you use NEMESIS in your research, please cite:
+If you use NEMESIS in your research, please cite our arXiv preprint:
 
 ```bibtex
 @article{jung2026nemesis,
@@ -197,8 +201,11 @@ If you use NEMESIS in your research, please cite:
   author  = {Jung, Hyeonseok and others},
   journal = {arXiv preprint arXiv:2604.01612},
   year    = {2026},
+  url     = {https://arxiv.org/abs/2604.01612},
 }
 ```
+
+Paper: https://arxiv.org/abs/2604.01612
 
 ---
 
